@@ -2,6 +2,8 @@
 layout    : home
 ---
 
+{% hello Folks %}
+
 To have, to hold, to love,
 cherish, honor, and protect?
   
