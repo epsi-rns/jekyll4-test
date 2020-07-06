@@ -11,7 +11,7 @@ deploy:
   skip-cleanup: true
 
   # Set in travis-ci.org dashboard, marked secure
-  github-token: $GITHUB_TOKEN
+  github-token: $JEKYLL_PAT
   keep-history: true
   on:
     branch: master
