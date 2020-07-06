@@ -1,0 +1,25 @@
+# An example of Jekyll site
+# using Bulma Material Design
+# for personal learning purpose.
+
+# Site settings
+title: Your mission. Good Luck!
+email: epsi.nurwijayadi@gmail.com
+description: >- # description below
+  Embrace, extend, and extinguish: Open Source with Daily Genuine Experience.
+  From Coding, Design, Package Management Tweak to Desktop Customization.
+
+# the subpath of your site, e.g. /blog
+baseurl: "" 
+
+# the base hostname & protocol for your site, e.g. http://example.com
+url: "http://localhost:4000"
+twitter_username: nurwijayadi
+github_username:  epsi-rns
+
+# Build settings
+markdown: kramdown
+
+# Produces a cleaner folder structure when using categories
+# permalink: /:year/:month/:title.html
+permalink: /:categories/:year/:month/:day/:title:output_ext

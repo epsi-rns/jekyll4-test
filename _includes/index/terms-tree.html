@@ -1,0 +1,22 @@
+
+  <p>Tag Tree:
+  <ul>
+  {% for item in (0..terms.size) %}{% unless forloop.last %}
+    {% assign this_word = term_array[item] | strip_newlines %}
+    <li id="{{ this_word | slugify }}" class ="anchor-target">
+      {{ this_word }}
+      <ul>
+        {% for post in terms[this_word] %}
+          {% if post.title != null %}
+          <li>
+            <a href="{{ post.url | prepend: site.baseurl }}">
+              {{ post.title }}
+            </a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+  {% endunless %}{% endfor %}
+  </ul>
+  </p>

@@ -1,0 +1,9 @@
+---
+layout: default
+aside_message : This is a post kind layout.
+---
+
+  <h2>{{ page.title | default: site.title }}</h2>
+  <pre>{{ page.date | date: "%B %d, %Y" }}</pre>
+
+  {{ content }}

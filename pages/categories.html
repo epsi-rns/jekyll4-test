@@ -1,0 +1,12 @@
+---
+layout    : index
+title     : All Categories
+permalink : /categories/
+---
+
+{% assign terms = site.categories %}
+{% include index/terms-array.html %}
+{% include index/terms-badge.html %}
+{% include index/terms-tree.html %}
+
+{% comment %}{% include index/terms-list.html %}{% endcomment %}

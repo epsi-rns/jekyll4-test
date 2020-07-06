@@ -1,0 +1,11 @@
+
+  <p>Tag List:
+  <ul>
+  {% for item in (0..terms.size) %}{% unless forloop.last %}
+    {% assign this_word = term_array[item] | strip_newlines %}
+    <li id="{{ this_word | slugify }}" class ="anchor-target">
+      {{ this_word }}
+    </li>
+  {% endunless %}{% endfor %}
+  </ul>
+  </p>

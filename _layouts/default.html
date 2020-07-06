@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% include site/head.html %}
+</head>
+
+<body>
+  {% include site/header.html %}
+
+  <main role="main">
+    {{ content }}
+  </main>
+
+  <aside>
+    <strong>{{ layout.aside_message }}</strong>
+  </aside>
+
+  {% include site/footer.html %}
+</body>
+
+</html>
+

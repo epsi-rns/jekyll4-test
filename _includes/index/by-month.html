@@ -1,0 +1,48 @@
+{% assign postsByYear = site.posts
+          | group_by_exp: "post", "post.date | date: '%Y'"  %}
+
+<div id="archive">
+{% for year in postsByYear %}
+
+  {% capture spaceless %}
+    {% assign current_year = 'now' | date: '%Y' %}
+    {% assign year_text = nil %}
+
+    {% if year.name == current_year %}
+      {% assign year_text = year.name 
+                | prepend: "This year's posts (" | append: ')' %}
+    {% else %}
+      {% assign year_text = year.name %}
+    {% endif %}
+  {% endcapture %} 
+
+  <section>
+    <p class ="anchor-target" 
+         id="{{ year.name }}"><b>{{ year_text }}</b></p>
+
+    {% assign postsByMonth = year.items
+              | group_by_exp:"post", "post.date | date: '%m'"
+              | sort: 'name'
+              | reverse %}
+    <ul>
+      {% for month in postsByMonth %}
+      <li>
+        {% for post in month.items limit:1 %}
+        <div id="{{ year.name }}-{{ month.name }}">
+             {{ post.date | date: '%b - %Y' }}</div>
+        {% endfor %}
+
+        <ul>
+          {% for post in month.items %}
+          <li><a href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+          </a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+{% endfor %}
+</div>
