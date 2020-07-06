@@ -9,7 +9,6 @@ deploy:
   local-dir: _site
   provider: pages
   skip-cleanup: true
-30937278a940632f03e9c83c443dfa5debe9b4b0
   # Set in travis-ci.org dashboard, marked secure
   github-token: $GITHUB_TOKEN
   keep-history: true
